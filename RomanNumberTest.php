@@ -4,22 +4,24 @@ require_once 'RomanNumber.php';
 
 class RomanNumberTest extends PHPUnit_Framework_TestCase
 {
+	 public function setUp()
+	 {
+         $this->romannumber = new RomanNumber();
+	 }
+
 	 public function test_put_number_one_should_be_return_I()
 	 {
-	 	  $romannumber = new RomanNumber();
-	 	  $this->assertEquals('I',$romannumber->convertToRomanNumber(1));
+	 	  $this->assertEquals('I',$this->romannumber->convertToRomanNumber(1));
 	 }
 
 	 public function test_put_number_two_should_be_return_II()
 	 {
-	 	  $romannumber = new RomanNumber();
-	 	  $this->assertEquals('II',$romannumber->convertToRomanNumber(2));
+	 	  $this->assertEquals('II',$this->romannumber->convertToRomanNumber(2));
 	 }
 
 	 public function test_put_number_three_should_be_return_III()
 	 {
-	 	  $romannumber = new RomanNumber();
-	 	  $this->assertEquals('III',$romannumber->convertToRomanNumber(3));
+	 	  $this->assertEquals('III',$this->romannumber->convertToRomanNumber(3));
 	 }
 }
 
