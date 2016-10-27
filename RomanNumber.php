@@ -2,19 +2,21 @@
 
 class RomanNumber
 {
-     public function convertToRomanNumber($number)
-     {
+    public function convertToRomanNumber($number)
+    {
+     	if ($number >= 5) {
+     		$result = "V".str_repeat("I",$number-5);
+     	}
      	if($number == 4) {
-     		return "IV";
-     	} else if ($number == 5) {
-     		return "V";
-     	} else if ($number == 6) {
-     		return "VI";
+     		$result = "IV";
+     	}
+     	if($number < 4){
+			$result = str_repeat("I",$number);
      	}
 
-        return str_repeat("I",$number);
+        return $result ;
      	
-     }
+    }
 
 }
 
