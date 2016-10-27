@@ -4,7 +4,14 @@ class RomanNumber
 {
      public function convertToRomanNumber($number)
      {
-          return str_repeat("I",$number);
+     	if($number == 4) {
+     		return "IV";
+     	} else if ($number == 5) {
+     		return "V";
+     	}
+
+        return str_repeat("I",$number);
+     	
      }
 
 }

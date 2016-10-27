@@ -23,6 +23,17 @@ class RomanNumberTest extends PHPUnit_Framework_TestCase
 	 {
 	 	  $this->assertEquals('III',$this->romannumber->convertToRomanNumber(3));
 	 }
+
+	 public function test_put_number_four_should_be_return_IV()
+	 {
+	 	  $this->assertEquals('IV',$this->romannumber->convertToRomanNumber(4));
+	 }
+
+	 public function test_put_number_five_should_be_return_V()
+	 {
+	 	  $this->assertEquals('V',$this->romannumber->convertToRomanNumber(5));
+	 }
+
 }
 
 ?>
