@@ -8,6 +8,8 @@ class RomanNumber
      		return "IV";
      	} else if ($number == 5) {
      		return "V";
+     	} else if ($number == 6) {
+     		return "VI";
      	}
 
         return str_repeat("I",$number);
