@@ -69,6 +69,11 @@ class RomanNumberTest extends PHPUnit_Framework_TestCase
 	 	  $this->assertEquals('LX',$this->romannumber->convertToRomanNumber(60));
 	 }
 
+	 public function test_put_number_ninety_shoul_be_return_LX()
+	 {
+	 	  $this->assertEquals('XC',$this->romannumber->convertToRomanNumber(90));
+	 }
+
 
 }
 
