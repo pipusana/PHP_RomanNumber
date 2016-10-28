@@ -44,6 +44,11 @@ class RomanNumberTest extends PHPUnit_Framework_TestCase
 	 	  $this->assertEquals('IX',$this->romannumber->convertToRomanNumber(9));
 	 }
 
+	 public function test_put_number_ten_shoul_be_return_X()
+	 {
+	 	  $this->assertEquals('X',$this->romannumber->convertToRomanNumber(10));
+	 }
+
 }
 
 ?>
