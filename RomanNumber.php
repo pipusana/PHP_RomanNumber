@@ -5,19 +5,22 @@ class RomanNumber
     public function convertToRomanNumber($number)
     {
     	$result = '';
-     	if($number >= 5 ) { 
+
+        if($number == 9) {
+            $result = 'IX'; 
+        }
+        if($number >= 5 && $number < 9) { 
      		$number = $number - 5; 
      		$result = 'V';
      	}
      	if($number == 4) {
-     		$result = "IV";
+     		$result = 'IV';
      	}
      	if($number < 4){
 			$result .= str_repeat("I",$number);
      	}
-     	
+
         return $result ;
-     	
     }
 
 }
