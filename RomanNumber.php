@@ -8,7 +8,9 @@ class RomanNumber
         
         if($number >= 10){
             $number = $number/10;
-            return $result .= str_repeat("X",$number);
+            if($number < 4){
+              return $result .= str_repeat("X",$number);
+            }
         }
         if($number == 9) {
             $result = 'IX'; 
