@@ -8,14 +8,15 @@ class RomanNumber
     	$result = '';
         if($number >= 10){
           $number = $number/10;
-          if($number == 5){ 
-            $result = $this->printToRomanNumeral(1,0);;
+          if($number >= 5){ 
+            $number = $number-5;
+            $result = $this->printToRomanNumeral(1,0);
           }
-          if($number == 4) {
+          if($number == 4){
             $result = $this->printToRomanNumeral(1,1);
           }
           if($number < 4){ 
-            $result = $this->printToRomanNumeral($number,2);
+            $result .= $this->printToRomanNumeral($number,2);
           }
           return $result;
         }

@@ -64,6 +64,11 @@ class RomanNumberTest extends PHPUnit_Framework_TestCase
 	 	  $this->assertEquals('L',$this->romannumber->convertToRomanNumber(50));
 	 }
 
+	 public function test_put_number_sixty_shoul_be_return_LX()
+	 {
+	 	  $this->assertEquals('LX',$this->romannumber->convertToRomanNumber(60));
+	 }
+
 
 }
 
