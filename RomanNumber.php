@@ -2,15 +2,22 @@
 
 class RomanNumber
 {
-    $valueRomanNumber = ['I','X'];
+    private $valueRomanNumber = ['X','I'];
+
     public function convertToRomanNumber($number)
     {
     	$result = '';
         if($number >= 10){
           $number = $number/10;
-          return $this->printToRomanNumeral_I_X($number,1);
+          if($number == 4) {
+            $result = 'XL';
+          }
+          if($number < 4){
+            $result = $this->printToRomanNumeral_I_X($number,0);
+          }
+          return $result;
         }
-        if($number == 9) {
+        if($number == 9){
             $result = 'IX'; 
         }
         if($number >= 5 && $number < 9) { 
@@ -20,11 +27,10 @@ class RomanNumber
      	if($number == 4) {
      		$result = 'IV';
      	}
-     	if($number < 4){
-			$result .= $this->printToRomanNumeral_I_X($number,0);
+     	if($number < 4) {
+			$result .= $this->printToRomanNumeral_I_X($number,1);
      	}
-
-        return $result ;
+        return $result;
     }
 
     public function printToRomanNumeral_I_X($number,$index)
