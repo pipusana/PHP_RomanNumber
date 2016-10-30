@@ -2,8 +2,8 @@
 
 class RomanNumber
 {
-    private $valueRomanNumber = ['C','XC','L','XL','X','IX','V','IV','I'];
-    private $arrabic = [100,90,50,40,10,9,5,4,1];
+    private $valueRomanNumber = ['CD','C','XC','L','XL','X','IX','V','IV','I'];
+    private $arrabic = [400,100,90,50,40,10,9,5,4,1];
 
     public function convertToRomanNumber($number)
     {
