@@ -94,6 +94,10 @@ class RomanNumberTest extends PHPUnit_Framework_TestCase
 	 	  $this->assertEquals('DC',$this->romannumber->convertToRomanNumber(600));
 	 }
 
+	 public function test_put_number_ninehundred_shoul_be_return_CM()
+	 {
+	 	  $this->assertEquals('CM',$this->romannumber->convertToRomanNumber(900));
+	 }
 
 }
 
