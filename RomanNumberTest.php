@@ -104,6 +104,11 @@ class RomanNumberTest extends PHPUnit_Framework_TestCase
 	 	  $this->assertEquals('M',$this->romannumber->convertToRomanNumber(1000));
 	 }
 
+	 public function test_put_number_fourthousand_shoul_be_return_MMMM()
+	 {
+	 	  $this->assertEquals('MMMM',$this->romannumber->convertToRomanNumber(4000));
+	 }
+
 
 }
 
