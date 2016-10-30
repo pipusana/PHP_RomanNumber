@@ -3,39 +3,22 @@
 class RomanNumber
 {
     private $valueRomanNumber = ['XC','L','XL','X','IX','V','IV','I'];
-    private $arrabic = [50,40,10,9,5,4,1];
+    private $arrabic = [90,50,40,10,9,5,4,1];
+
     public function convertToRomanNumber($number)
     {
-    	$result = '';
-        if($number >= 10){
-          if($number == 90){
-            $result = $this->printToRomanNumeral(1,0);
-          }  
-          if($number >= 50 && $number < 90){ 
-            $number = $number-50;
-            $result = $this->printToRomanNumeral(1,1);
-          }
-          if($number == 40){
-            $result = $this->printToRomanNumeral(1,2);
-          }
-          if($number < 40){ 
-            $result .= $this->printToRomanNumeral($number/10,3);
-          }
-          return $result;
+        $result = '';
+        foreach ($this->arrabic as $value) {
+            if($number%$value == 0){
+                $number = $number/$value;
+                if($number >= 5){
+                    $number = $number-5;
+                    $result .= $this->printToRomanNumeral(1,array_search($value,$this->arrabic)-2);
+                }
+                $result .= $this->printToRomanNumeral($number,array_search($value,$this->arrabic));
+                break;
+            }
         }
-        if($number == 9){
-            $result = $this->printToRomanNumeral(1,4);
-        }
-        if($number >= 5 && $number < 9){ 
-     		$number = $number - 5; 
-     		$result = $this->printToRomanNumeral(1,5);
-     	}
-     	if($number == 4) {
-     		$result = $this->printToRomanNumeral(1,6);
-     	}
-     	if($number < 4) {
-			$result .= $this->printToRomanNumeral($number,7);
-     	}
         return $result;
     }
 
@@ -45,5 +28,6 @@ class RomanNumber
         return $result .= str_repeat($this->valueRomanNumber[$index],$number);
     }
 }
+
 
 ?>
