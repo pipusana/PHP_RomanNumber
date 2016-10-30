@@ -79,9 +79,14 @@ class RomanNumberTest extends PHPUnit_Framework_TestCase
 	 	  $this->assertEquals('C',$this->romannumber->convertToRomanNumber(100));
 	 }
 
-	 public function test_put_number_onehundred_shoul_be_return_CD()
+	 public function test_put_number_fourhundred_shoul_be_return_CD()
 	 {
 	 	  $this->assertEquals('CD',$this->romannumber->convertToRomanNumber(400));
+	 }
+
+	 public function test_put_number_fivehundred_shoul_be_return_D()
+	 {
+	 	  $this->assertEquals('D',$this->romannumber->convertToRomanNumber(500));
 	 }
 
 }
