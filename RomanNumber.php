@@ -8,15 +8,11 @@ class RomanNumber
     public function convertToRomanNumber($number)
     {
         $result = '';
-        foreach ($this->arrabic as $value) {
-            if($number%$value == 0){
-                $number = $number/$value;
-                if($number >= 5){
-                    $number = $number-5;
-                    $result .= $this->printToRomanNumeral(1,array_search($value,$this->arrabic)-2);
-                }
-                $result .= $this->printToRomanNumeral($number,array_search($value,$this->arrabic));
-                break;
+        foreach ($this->arrabic as $key => $value) {
+            $resultDevide = $number / $value;
+            if($resultDevide > 0){
+                $result .= $this->printToRomanNumeral($resultDevide,$key);
+                $number = $number % $value;
             }
         }
         return $result;
